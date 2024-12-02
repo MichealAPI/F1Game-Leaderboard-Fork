@@ -1,0 +1,29 @@
+* { /* TODO: There is probably going to be a Dark mode switch */
+    --light-primary-color: #333333;
+    --light-red-color: red;
+    --light-green-color: green;
+    --light-secondary-color: black;
+    --btn-primary-color: #009DFF;
+    --btn-hover-color: #007BBB;
+    --btn-click-color: #005999;
+    --btn-text-color: white;
+    --tutorial-text-color: white;
+    --background-color: #252525;
+}
+
+
+.bg-red {
+    background-color: var(--light-red-color);
+}
+
+.bg-green {
+    background-color: var(--light-green-color);
+}
+
+.bg-primary {
+    background-color: var(--light-primary-color);
+}
+
+.bg-secondary {
+    background-color: var(--light-secondary-color);
+}

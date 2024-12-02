@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Race Game</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+</head>
+
+<body class="background">
+    
+    <div class="content-wrapper">
+
+        <div class="container-fluid d-flex flex-column">
+
+            <div class="row justify-content-center">
+                
+                <div class="col-md-6">
+
+                    <!-- A script will be generating this code section automatically -->
+                    <div class="lights-container" id="lights-container"></div>
+
+                </div>
+
+
+            </div>
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-6 d-flex justify-content-center">
+
+                    <div class="ready-btn">
+
+                        <button class="btn btn-primary inter-bold" id="start-button">I'm ready!</button>
+
+                        <div class="subtitle inter-bold">
+                            <p id="subtitleText">Your time: N/A</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row justify-content-center">
+                
+                <div class="col-md-6 d-flex justify-content-center">
+
+                    <div class="tutorial">
+
+                        <div class="tutorial-title">
+                            <h4 class="inter-bold">How to play?</h4>
+                        </div>
+
+                        <div class="tutorial-content">
+
+                            <div class="steps">
+                                <ol>
+                                    <div class="step inter-regular">
+                                        <li>Press Ready when you're prepared to start.</li>
+                                    </div>
+
+                                    <div class="step inter-regular">
+                                        <li>Wait for the race lights to turn green.</li>
+                                    </div>
+                                    
+                                    <div class="step inter-regular">
+                                        <li>Tap anywhere on your screen as fast as you can!</li>
+                                    </div>
+
+                                    <div class="step inter-regular">
+                                        <li>Aim for your best reaction time and improve your results.</li>
+                                    </div>
+                                </ol>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="static/js/trafficlight.js"></script>
+        <script src="static/js/game.js"></script>
+
+    </div>
+
+
+
+</body>
+
+</html>

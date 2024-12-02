@@ -1,0 +1,17 @@
+.content-wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-wrapper .container-fluid {
+    row-gap: 100px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .content-wrapper .container-fluid {
+        row-gap: 50px;
+    }
+}

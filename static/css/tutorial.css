@@ -1,0 +1,34 @@
+.tutorial {
+    display: flex;
+    flex-direction: column;
+}
+
+.tutorial .tutorial-title h4 {
+    text-align: center;
+    font-size: 20px;
+    color: var(--tutorial-text-color);
+    opacity: .7;
+}
+
+.tutorial .tutorial-content .steps ol .step li {
+    color: var(--tutorial-text-color);
+    opacity: .7;
+    font-size: 16px;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .tutorial .tutorial-title h4 {
+        font-size: 16px;
+    }
+
+    .tutorial .tutorial-content {
+        max-width: 314px;
+    }
+
+    .tutorial .tutorial-content .steps ol .step li {
+        font-size: 13px;
+    }
+}

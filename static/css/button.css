@@ -1,0 +1,43 @@
+
+.ready-btn {
+    text-align: center;
+}
+
+.ready-btn button {
+    background-color: var(--btn-primary-color);
+    color: var(--btn-text-color);
+    border: none;
+    font-size: 20px;
+    border-radius: 16px;
+    padding: 20px 101px;
+    cursor: pointer;
+}
+
+.ready-btn button:hover {
+    background-color: var(--btn-hover-color);
+}
+
+.ready-btn button:active {
+    background-color: var(--btn-click-color);
+}
+
+.ready-btn .subtitle p {
+    font-size: 16px;
+    color: var(--tutorial-text-color);
+    opacity: .7;
+    padding: 5px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .ready-btn button {
+        padding: 13px 65px;
+        font-size: 16px;
+        border-radius: 16px;
+    }
+
+    .ready-btn .subtitle p {
+        font-size: 13px;
+    }
+
+}
