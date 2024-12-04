@@ -3,7 +3,8 @@ const subtitleText = document.getElementById('subtitleText');
 const startButton = document.querySelector('#start-button');
 
 // To light up each row
-let delay = 1000;
+// Random 1 to 2 seconds delay in ms 
+let delay = Math.floor(Math.random() * 1000) + 1000;
 
 // Game state variables
 let isRunning = false;
