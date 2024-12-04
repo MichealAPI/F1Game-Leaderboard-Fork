@@ -59,6 +59,11 @@ function startGame() {
 
 // Handle the player's click
 function handleMouseClick() {
+
+    if (isRunning && !canClick) {
+        alert('Early Start!');
+    }
+
     if (!isRunning || !canClick) return;
 
     const reflexTime = Date.now() - startTime;
