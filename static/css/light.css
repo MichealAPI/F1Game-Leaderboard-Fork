@@ -1,6 +1,6 @@
 .light {
     background: var(--light-secondary-color);
-    height: 230px;
+    height: 305px;
     width: 110px;
     border-radius: 20px;
     align-items: center;
@@ -33,7 +33,7 @@
 /* Mobile */
 @media (max-width: 768px) {
     .light {
-        height: 115px;
+        height: 152px;
         width: 56px;
         border-radius: 9px;
         row-gap: 6px;

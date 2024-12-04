@@ -1,9 +1,9 @@
 // Select elements
-const firstRowElements = document.querySelectorAll('.first-row');
-const secondRowElements = document.querySelectorAll('.second-row');
-const thirdRowElements = document.querySelectorAll('.third-row');
 const subtitleText = document.getElementById('subtitleText');
 const startButton = document.querySelector('#start-button');
+
+// To light up each row
+let delay = 1000;
 
 // Game state variables
 let isRunning = false;
@@ -12,17 +12,23 @@ let startTime = 0;
 
 // Reset all rows to the default state
 function resetGame() {
-    [firstRowElements, secondRowElements, thirdRowElements].forEach(row =>
-        lightUpRow(row, 'primary-light')
-    );
+    
+    for (let i = 1; i <= numberOfLightCircles; i++) {
+        lightUpRow(i, 'primary-light');
+    }
+
 }
 
 // Update a row's classes for lighting up with a specific color
 function lightUpRow(row, color = 'bg-red') {
-    row.forEach(element => {
+
+    rowElements = document.querySelectorAll(`.row-${row}`);
+
+    rowElements.forEach(element => {
         element.classList.remove('primary-light', 'bg-red', 'bg-green'); // Remove any existing conflicting classes
         element.classList.add(color); // Apply the new color, selected color
     });
+    
 }
 
 // Start the game
@@ -32,17 +38,23 @@ function startGame() {
     isRunning = true;
     resetGame();
 
-    // Iterate over these times to light all up
-    const delayTimes = [1000, 2000, 2000 + Math.floor(Math.random() * 2000) + 1000];
+    for (let i = 1; i <= numberOfLightCircles; i++) {
 
-    // Light up rows sequentially
-    setTimeout(() => lightUpRow(firstRowElements), delayTimes[0]);
-    setTimeout(() => lightUpRow(secondRowElements), delayTimes[1]);
-    setTimeout(() => {
-        lightUpRow(thirdRowElements, 'bg-green');
-        startTime = Date.now();
-        canClick = true;
-    }, delayTimes[2]);
+        if (i == numberOfLightCircles) {
+            setTimeout(() => {
+                lightUpRow(i, 'bg-green');
+                startTime = Date.now();
+                canClick = true;
+
+                // Needed time + random time
+            }, (i - 1) * delay + Math.floor(Math.random() * 2000) + 1000);
+            break;
+        }
+
+        setTimeout(() => {
+            lightUpRow(i);
+        }, i * delay);
+    }
 }
 
 // Handle the player's click
