@@ -1,0 +1,30 @@
+
+.name-input {
+    text-align: center;
+}
+
+.name-input input {
+    background-color: var(--input-background-color);
+    color: var(--input-text-color);
+    border: none;
+    font-size: 20px;
+    border-radius: 16px;
+    cursor: pointer;
+
+    width: 300px;
+    height: 65px;
+
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    .name-input input {
+        font-size: 16px;
+        border-radius: 16px;
+
+        width: 205px;
+        height: 45px;
+    }
+
+}

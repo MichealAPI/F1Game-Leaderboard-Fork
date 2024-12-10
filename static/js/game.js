@@ -1,6 +1,7 @@
 // Select elements
 const subtitleText = document.getElementById('subtitleText');
 const startButton = document.querySelector('#start-button');
+const input = document.querySelector('#name-input');
 
 // To light up each row
 // Random 1 to 2 seconds delay in ms 
@@ -34,7 +35,9 @@ function lightUpRow(row, color = 'bg-red') {
 
 // Start the game
 function startGame() {
+
     if (isRunning) return;
+    if (!checkName()) return;
 
     isRunning = true;
     resetGame();
@@ -70,9 +73,34 @@ function handleMouseClick() {
     const reflexTime = Date.now() - startTime;
     subtitleText.textContent = `Your time: ${reflexTime}ms`;
 
+    save(input.value, reflexTime);
+
+    // Send the reflex time to the server
+
+
     resetGame();
     isRunning = false;
     canClick = false;
+}
+
+
+function checkName() {
+    if (input.value === '') {
+        alert('Please enter your name!');
+        return false;
+    }
+    return true;
+}
+
+function save(name, reflexTime) {
+
+    // Save to the server
+    // https://mongoleaderboard-54b02eb48079.herokuapp.com/ranking/{id}/{time_ms}
+    // POST request
+
+    fetch(`https://mongoleaderboard-54b02eb48079.herokuapp.com/ranking/${name}/${reflexTime}`, {
+        method: 'POST'
+    })
 }
 
 // Event listeners
